@@ -32,8 +32,11 @@ Consumer
 Java
 Spring Boot
 API to post messages
+KafkaTemplate
 Firefox RESTED plugin
 ```
+
+Spring for Apache Kafka's KafkaTemplate is a thin wrapper around a Kafka producer that plays nicely with other Spring features, like dependency injection and automatic configuration. It provides a number of convenience methods for producing to Kafka topics.
 
 ## Screenshot
 
