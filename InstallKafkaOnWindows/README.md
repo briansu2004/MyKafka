@@ -8,7 +8,7 @@ c:\apps\kafka
 c:\apps\kafka\server.properties
 c:\apps\kafka\zookeeper.properties
 
-```
+```dos
 .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
 .\bin\windows\kafka-server-start.bat .\config\server.properties
 .\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TestTopic
@@ -20,7 +20,7 @@ c:\apps\kafka\zookeeper.properties
 
 ## Knowledge Points
 
-```
+```dos
 Kafka
 Java
 ZooKeeper

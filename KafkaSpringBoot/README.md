@@ -2,30 +2,30 @@
 
 ## Set up
 
-```
+```dos
 .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
 .\bin\windows\kafka-server-start.bat .\config\server.properties
 ```
 
-```
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
-		</dependency>
+```xml
+  <dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-web</artifactId>
+  </dependency>
+  <dependency>
+   <groupId>org.springframework.kafka</groupId>
+   <artifactId>spring-kafka</artifactId>
+  </dependency>
 ```
 
-```
+```dos
 POST
 http://localhost:8888/kafkaapp/post?msg=Hello
 ```
 
 ## Knowledge Points
 
-```
+```dos
 Kafka
 Producer
 Consumer
