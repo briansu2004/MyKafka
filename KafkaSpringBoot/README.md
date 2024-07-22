@@ -1,5 +1,9 @@
 # Kafka with Spring Boot
 
+- [Set up](#set-up)
+- [Knowledge Points](#knowledge-points)
+- [Screenshot](#screenshot)
+
 ## Set up
 
 ```dos
@@ -25,7 +29,7 @@ http://localhost:8888/kafkaapp/post?msg=Hello
 
 ## Knowledge Points
 
-```dos
+```text
 Kafka
 Producer
 Consumer

@@ -1,5 +1,9 @@
 # Install Kafka on Windows 10
 
+- [Set up](#set-up)
+- [Knowledge Points](#knowledge-points)
+- [Screenshot](#screenshot)
+
 ## Set up
 
 kafka_2.13-3.0.0.tgz has issues.
@@ -20,7 +24,7 @@ c:\apps\kafka\zookeeper.properties
 
 ## Knowledge Points
 
-```dos
+```text
 Kafka
 Java
 ZooKeeper

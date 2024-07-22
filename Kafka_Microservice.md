@@ -1,6 +1,18 @@
-# Kafka and Microservice
+# Kafka for Microservice
 
-## [Kafka] How to design the Kafka topics?
+- [How to design the Kafka topics?](#how-to-design-the-kafka-topics)
+- [Can you give me a payload example of Kafka topic?](#can-you-give-me-a-payload-example-of-kafka-topic)
+- [How to define Kafka schema?](#how-to-define-kafka-schema)
+- [Can you give me an example of the generated Java class from a Kafka schema?](#can-you-give-me-an-example-of-the-generated-java-class-from-a-kafka-schema)
+- [How to Register the Kafka schema?](#how-to-register-the-kafka-schema)
+- [How to encode the Kafka message with the schema?](#how-to-encode-the-kafka-message-with-the-schema)
+- [How to decode the Kafka message with the schema?](#how-to-decode-the-kafka-message-with-the-schema)
+- [Do you have a payload example of an encoded Kafka message?](#do-you-have-a-payload-example-of-an-encoded-kafka-message)
+- [How to implement the Kafka producer and consumer in my microservices?](#how-to-implement-the-kafka-producer-and-consumer-in-my-microservices)
+- [What is Collections.singletonList in Java?](#what-is-collectionssingletonlist-in-java)
+- [What is Kafka client library for Spring Boot ?](#what-is-kafka-client-library-for-spring-boot-)
+
+## How to design the Kafka topics?
 
 Designing Kafka topics is an important aspect of building a Kafka-based system. The following steps can be taken to design Kafka topics:
 
@@ -22,7 +34,7 @@ Plan for scalability: As the number of messages and topics grows, you need to pl
 
 By following these steps, you can design Kafka topics that are efficient, scalable, and easy to manage. It is important to iterate and refine the topic design based on feedback from the system and the needs of the business.
 
-## [Kafka] Can you give me a payload example of Kafka topic?
+## Can you give me a payload example of Kafka topic?
 
 Sure, here's an example payload of a Kafka topic:
 
@@ -53,7 +65,7 @@ metadata: Additional metadata about the event, such as the user's browser and IP
 
 This payload could be used by downstream consumers to perform various analytics tasks, such as tracking user behavior, identifying popular pages, or detecting anomalies in user activity.
 
-## [Kafka] How to define Kafka schema?
+## How to define Kafka schema?
 
 In Kafka, you can define the schema for your messages using the Avro schema format, which is a compact and efficient way of describing the structure and data types of your data.
 
@@ -92,7 +104,7 @@ Use the schema: Finally, you can use the schema in your Kafka producers and cons
 
 By defining and using a schema, you can ensure that your messages are consistent, efficient, and easy to work with. The schema provides a contract between producers and consumers that ensures that they agree on the structure and data types of the messages.
 
-## [Kafka] Can you give me an example of the generated Java class from a Kafka schema?
+## Can you give me an example of the generated Java class from a Kafka schema?
 
 Sure! Here's an example of a Java class generated from the Avro schema we defined in my previous answer:
 
@@ -171,7 +183,7 @@ The generated class provides a constructor, getters, and setters for each field 
 
 When using the Avro library in Java, you can use this class to read and write messages in the Avro format. You can create a new UserActivity instance, set its fields, and write it to Kafka using an Avro serializer. When you read a message from Kafka, you can use the Avro deserializer to decode the message into a UserActivity instance and access its fields.
 
-## [Kafka] How to Register the Kafka schema?
+## How to Register the Kafka schema?
 
 To register a Kafka schema, you need to use a schema registry. A schema registry is a centralized service that manages schemas and provides a unique ID for each schema. One popular schema registry is Confluent Schema Registry, which is an open-source service developed by the creators of Kafka.
 
@@ -210,7 +222,7 @@ int schemaId = restClient.registerSchema(schema, subject);
 
 In this example, we create a new REST client for the schema registry, parse the schema using the Avro library, and register the schema with the schema registry using the REST client. The registerSchema() method returns the ID of the registered schema, which we can use to encode and decode messages.
 
-## [Kafka] How to encode the Kafka message with the schema?
+## How to encode the Kafka message with the schema?
 
 To encode a Kafka message with a schema, you need to use a serialization format that is compatible with your schema. Avro is a popular choice for encoding Kafka messages with schemas, and Kafka provides a built-in Avro serializer and deserializer.
 
@@ -283,7 +295,7 @@ In this example, we create a new Kafka producer and use the Kafka Avro serialize
 
 Note that you need to configure the serializer and the schema registry URL in the props object. Also, you need to provide a schema registry client to register the schema and retrieve the schema ID.
 
-## [Kafka] How to decode the Kafka message with the schema?
+## How to decode the Kafka message with the schema?
 
 To decode a Kafka message with a schema, you need to use a deserialization format that is compatible with your schema. Avro is a popular choice for encoding Kafka messages with schemas, and Kafka provides a built-in Avro serializer and deserializer.
 
@@ -345,7 +357,7 @@ In this example, we use a while loop to continuously poll for messages. For each
 
 Note that you need to configure the deserializer and the schema registry URL in the props object. Also, you need to provide a schema registry client to retrieve the schema ID. Finally, you need to process the decoded message according to your application logic.
 
-## [Kafka] Do you have a payload example of an encoded Kafka message?
+## Do you have a payload example of an encoded Kafka message?
 
 Sure! Here's an example of an encoded Kafka message in Avro format, using the schema defined in my previous answer:
 
@@ -363,7 +375,7 @@ quantity: 1
 
 The encoded message is a binary sequence that contains the bytes of the serialized Avro message. The first byte 00 is the Avro magic byte, followed by the schema ID 01 08, which is the ID of the schema used to encode the message. The remaining bytes represent the serialized message data, which includes the timestamp, product, and quantity fields.
 
-## [Kafka] How to implement the Kafka producer and consumer in my microservices?
+## How to implement the Kafka producer and consumer in my microservices?
 
 Implementing Kafka producer and consumer in microservices can be done by following these steps:
 
@@ -447,7 +459,7 @@ public class KafkaMessageConsumer {
 
 Note: The above code is just an example and you may need to modify it based on your use case.
 
-## [Kafka] What is Collections.singletonList in Java?
+## What is Collections.singletonList in Java?
 
 Collections.singletonList is a Java utility method that returns an immutable list containing only the specified object. The returned list is serializable and implements all the optional list operations, such as get, contains, iterator, and size.
 
@@ -460,7 +472,7 @@ System.out.println(list.get(0));
 
 In this example, we create a new list using Collections.singletonList and add a single string object to the list. The get(0) method returns the only element in the list, which is the string "Hello, World!". Since the list is immutable, any attempt to modify the list, such as adding or removing elements, will result in an UnsupportedOperationException.
 
-## [Kafka] What is Kafka client library for Spring Boot ?
+## What is Kafka client library for Spring Boot ?
 
 The Kafka client library for Spring Boot is called Spring Kafka. Spring Kafka provides a convenient way to integrate Kafka with Spring Boot applications by providing abstractions and integration with Spring's core programming model.
 
@@ -478,7 +490,3 @@ Support for interceptors to customize message processing
 ```
 
 Overall, Spring Kafka makes it easier to work with Kafka in a Spring Boot application and provides a lot of the boilerplate code required to set up and configure Kafka producers and consumers.
-
-## [Kafka] 21
-
-## [Kafka] 31
